@@ -191,7 +191,7 @@ class MainScreen extends StatelessWidget {
                     children: [
                       for (var i = 0; i < queue.length; i++)
                         Dismissible(
-                          key: ValueKey(queue[i].id),
+                          key: ValueKey(i),
                           background: Container(
                             color: Colors.redAccent,
                             alignment: Alignment.centerRight,
@@ -661,33 +661,35 @@ class MediaLibrary {
       ),
     ],
     albumsRootId: [
-      MediaItem(
-        id: 'https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3',
-        album: "Science Friday",
-        title: "A Salute To Head-Scratching Science",
-        artist: "Science Friday and WNYC Studios",
-        duration: const Duration(milliseconds: 5739820),
-        artUri: Uri.parse(
-            'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
-      ),
-      MediaItem(
-        id: 'https://s3.amazonaws.com/scifri-segments/scifri201711241.mp3',
-        album: "Science Friday",
-        title: "From Cat Rheology To Operatic Incompetence",
-        artist: "Science Friday and WNYC Studios",
-        duration: const Duration(milliseconds: 2856950),
-        artUri: Uri.parse(
-            'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
-      ),
-      MediaItem(
-        id: 'https://s3.amazonaws.com/scifri-segments/scifri202011274.mp3',
-        album: "Science Friday",
-        title: "Laugh Along At Home With The Ig Nobel Awards",
-        artist: "Science Friday and WNYC Studios",
-        duration: const Duration(milliseconds: 1791883),
-        artUri: Uri.parse(
-            'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
-      ),
+      for (int i = 0; i < 1000; i++) ...[
+        MediaItem(
+          id: 'https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3',
+          album: "Science Friday",
+          title: "A Salute To Head-Scratching Science",
+          artist: "Science Friday and WNYC Studios",
+          duration: const Duration(milliseconds: 5739820),
+          artUri: Uri.parse(
+              'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
+        ),
+        MediaItem(
+          id: 'https://s3.amazonaws.com/scifri-segments/scifri201711241.mp3',
+          album: "Science Friday",
+          title: "From Cat Rheology To Operatic Incompetence",
+          artist: "Science Friday and WNYC Studios",
+          duration: const Duration(milliseconds: 2856950),
+          artUri: Uri.parse(
+              'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
+        ),
+        MediaItem(
+          id: 'https://s3.amazonaws.com/scifri-segments/scifri202011274.mp3',
+          album: "Science Friday",
+          title: "Laugh Along At Home With The Ig Nobel Awards",
+          artist: "Science Friday and WNYC Studios",
+          duration: const Duration(milliseconds: 1791883),
+          artUri: Uri.parse(
+              'https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg'),
+        ),
+      ]
     ],
   };
 }
